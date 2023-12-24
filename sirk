@@ -1,0 +1,56 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int n,i,d,nr=0,ok=1,y=1,a=1,b=2,m;
+    cin>>n;
+    n--;
+    while(a*b<n)
+    {
+        a++;
+        b++;
+    }
+    //cout<<a<<" "<<b<<" "<<n;
+    m=a*b-n;
+    for(i=1;nr<m;i++)
+    {
+        if(ok==0)
+        {
+            break;
+        }
+        for(d=2;d<=b;d++){
+            //cout<<d<<" ";
+            y=d;
+            nr++;
+            if(nr==m)
+            {
+                ok=0;
+                break;
+            }
+        }
+        
+        if(ok==0)
+        {
+            break;
+        }
+        for(d=b-1;d>=1;d--){
+            //cout<<d<<" ";
+            y=d;
+            nr++;
+            if(nr==m)
+            {
+                ok=0;
+                break;
+            }
+        }
+        if(ok==0)
+        {
+            break;
+        }
+        
+    }
+    cout<<y;
+    return 0;
+}
